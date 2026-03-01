@@ -1,7 +1,11 @@
-cmake_minimum_required(VERSION 4.1)
-project(hash_table C)
+add_library(hash_table STATIC
+    sc_hash_table.c
+)
 
-set(CMAKE_C_STANDARD 11)
+target_include_directories(hash_table PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)
 
-add_executable(sc_hash_table sc_hash_table.c
-            sc_hash_table.h)
+target_link_libraries(hash_table PUBLIC
+    common
+)

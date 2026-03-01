@@ -1,8 +1,11 @@
-cmake_minimum_required(VERSION 4.1)
-project(binary_heap C)
+add_library(binary_heap STATIC
+    binary_heap.c
+)
 
-set(CMAKE_C_STANDARD 11)
+target_include_directories(binary_heap PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)
 
-add_library(binary_heap STATIC binary_heap.c
-        fatal.h
-        fatal.c)
+target_link_libraries(binary_heap PUBLIC
+    common
+)

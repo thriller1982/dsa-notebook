@@ -1,35 +1,75 @@
-# 📚 Data Structures and Algorithm Analysis - Learning Notebook
+﻿# Data Structures and Algorithm Analysis - Learning Notebook
 
 ![Language](https://img.shields.io/badge/language-C-blue.svg)
-![Standard](https://img.shields.io/badge/std-C99%2F11-blue)
+![Standard](https://img.shields.io/badge/std-C11-blue)
 ![IDE](https://img.shields.io/badge/IDE-CLion-brightgreen)
 ![Status](https://img.shields.io/badge/Status-Learning-orange)
 
-## 📖 简介 (Introduction)
+## 简介
 
-欢迎来到我的数据结构与算法学习仓库！🚀
+这是一个用来记录数据结构与算法学习过程的仓库，主要使用 C 语言实现。
+当前仓库已按“模块化 + 统一构建”方式整理，方便后续持续新增更多数据结构主题。
 
-这个仓库用于记录我在学习 **《数据结构与算法分析》** 过程中的代码实现与学习笔记。所有的算法均使用 **C 语言** 进行原生实现，注重底层内存管理与指针操作的理解。
+## 技术栈
 
-每一个文件夹代表一个独立的学习单元或章节，包含了核心算法的源码以及我对相关理论的总结。
+- 语言：C (C11)
+- 构建工具：CMake
+- 开发环境：CLion / VS Code / 命令行
+- 编译器：GCC / Clang / MSVC（取决于本机环境）
 
-## 🛠️ 技术栈 (Tech Stack)
-
-* **语言**: C (Standard C99/C11)
-* **开发工具**: JetBrains CLion
-* **构建工具**: CMake
-* **编译器**: GCC / Clang
-
-## 📂 目录结构 (Directory Structure)
+## 目录结构
 
 ```text
 DSA-Notebook/
-├── README.md               # 项目说明文档
-├── .gitignore              # Git 忽略配置
-├── binary_heap/            # 示例：二叉堆章节
-│   ├── main.c              # C语言源码 (注意是 .c)
-│   ├── CMakeLists.txt      # 构建配置
-│   └── notes.md            # 学习笔记
-├── sorting/                # 示例：排序算法
-│   └── ...
-└── ...
+├── CMakeLists.txt          # 根构建入口，统一管理所有子模块
+├── README.md
+├── .gitignore
+├── common/                 # 公共代码（当前为 fatal 错误处理）
+│   ├── CMakeLists.txt
+│   ├── fatal.c
+│   └── fatal.h
+├── binary_heap/            # 二叉堆实现
+│   ├── CMakeLists.txt
+│   ├── binary_heap.c
+│   └── binary_heap.h
+├── hash_table/             # 分离链接哈希表实现
+│   ├── CMakeLists.txt
+│   ├── sc_hash_table.c
+│   ├── sc_hash_table.h
+│   └── sc_hash_table.md
+├── examples/               # 示例入口（预留）
+│   └── CMakeLists.txt
+└── tests/                  # 测试目录（预留）
+    └── CMakeLists.txt
+```
+
+## 构建说明
+
+在项目根目录执行：
+
+```bash
+cmake -S . -B build
+cmake --build build
+```
+
+说明：
+- `BUILD_EXAMPLES` 默认 `ON`（当前目录为预留占位，后续可添加 demo）。
+- `BUILD_TESTS` 默认 `OFF`（后续补测试时开启）。
+
+示例：
+
+```bash
+cmake -S . -B build -DBUILD_TESTS=ON
+cmake --build build
+```
+
+## 当前模块
+
+- `binary_heap`：二叉堆（优先队列）基础实现
+- `hash_table`：分离链接法哈希表实现
+
+## 后续计划
+
+- 在 `examples/` 添加可运行 `main` 示例
+- 在 `tests/` 增加基础单元测试
+- 持续补充更多数据结构模块（如 AVL、排序、图等）
