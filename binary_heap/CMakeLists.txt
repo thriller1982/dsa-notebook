@@ -1,5 +1,6 @@
 add_library(binary_heap STATIC
     binary_heap.c
+    binary_heap.h
 )
 
 target_include_directories(binary_heap PUBLIC

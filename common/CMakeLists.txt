@@ -1,5 +1,6 @@
 add_library(common STATIC
     fatal.c
+    fatal.h
 )
 
 target_include_directories(common PUBLIC

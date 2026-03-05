@@ -2,10 +2,10 @@
 #define BINARY_HEAP_LIBRARY_H
 
 #include <stdbool.h>
+#define MinPQSize 10
 struct HeapStruct;
 typedef struct HeapStruct *PriorityQueue;
 typedef int ElementType;
-const int MinPQSize = 10;
 
 PriorityQueue Initialize(int max_elements);
 void Insert(ElementType x, PriorityQueue h);

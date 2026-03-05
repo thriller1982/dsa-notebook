@@ -10,6 +10,7 @@ option(BUILD_TESTS "Build tests" OFF)
 add_subdirectory(common)
 add_subdirectory(binary_heap)
 add_subdirectory(hash_table)
+add_subdirectory(max_subsequence_sum)
 
 if(BUILD_EXAMPLES)
     add_subdirectory(examples)

@@ -1,5 +1,6 @@
 add_library(hash_table STATIC
     sc_hash_table.c
+    sc_hash_table.h
 )
 
 target_include_directories(hash_table PUBLIC
