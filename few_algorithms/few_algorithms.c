@@ -37,3 +37,15 @@ long int pow(long int x, long int n) {
         return pow(x * x, n / 2) * x;
     }
 }
+
+long long pow2(long long base, long long exp) {
+    long long res = 1;
+    while (exp > 0) {
+        if (exp % 2 == 1) {
+            res *= base;
+        }
+        base *= base;
+        exp /= 2;
+    }
+    return res;
+}
