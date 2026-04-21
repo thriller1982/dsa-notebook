@@ -12,6 +12,8 @@ add_subdirectory(list)
 add_subdirectory(max_subsequence_sum)
 add_subdirectory(stack)
 add_subdirectory(queue)
+add_subdirectory(few_algorithms)
+add_subdirectory(binary_search_tree)
 
 if(BUILD_EXAMPLES)
     add_subdirectory(examples)
