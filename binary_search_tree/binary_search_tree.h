@@ -2,8 +2,8 @@
 #define DSA_NOTEBOOK_BINARY_SEARCH_TREE_H
 
 typedef int ElementType;
-struct TreeNode;
-typedef struct TreeNode* Position;
+struct AvlNode;
+typedef struct AvlNode* Position;
 typedef Position SearchTree;
 
 SearchTree MakeEmpty(SearchTree t);

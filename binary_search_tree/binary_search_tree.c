@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "fatal.h"
 
-struct TreeNode {
+struct AvlNode {
     ElementType element;
     SearchTree left;
     SearchTree right;
@@ -48,7 +48,7 @@ Position FindMax(SearchTree t) {
 
 SearchTree Insert(ElementType x, SearchTree t) {
     if (t == NULL) {
-        t = malloc(sizeof(struct TreeNode));
+        t = malloc(sizeof(struct AvlNode));
         if (t == NULL) {
             FatalError("Out of space!!!");
         } else {
